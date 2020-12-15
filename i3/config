@@ -229,6 +229,12 @@ gaps top   25
 # gaps bottom -6
 # smart_gaps on
 
+# assign windows to workspaces
+assign [class="Google-chrome"] 2
+assign [class="Firefox"] 2
+assign [class="Nautilus"] 3
+assign [class="Rhythmbox"] 5
+
 # launch chrome browser on startup
 exec google-chrome --password-store=gnome
 
@@ -241,10 +247,6 @@ bindsym $mod+f exec nautilus
 #Launch Rhythm box
 bindsym $mod+m exec rhythmbox
 
-# assign windows to workspaces
-assign [class="google-chrome"] 2
-assign [class="firefox"] 2
-assign [class="nautilus"] 3
 
 #screenshot by pressing printscreen
 bindsym Print exec gnome-screenshot
