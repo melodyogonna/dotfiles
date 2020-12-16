@@ -28,3 +28,8 @@ This config is pretty much tailored to my workflow which means it might contain 
 - [Vim-polyglot](https://github.com/sheerun/vim-polyglot) - For better syntax highlighting
 - [COC](https://github.com/neoclide/coc.nvim) - For the intellisense
 - [snippets](https://github.com/honza/vim-snippets)- Provides snippets for most languages, integrates well with COC
+
+#### sreenshot
+![](https://res.cloudinary.com/melodyogonna/image/upload/v1608161236/Screenshot_from_2020-12-15_14-38-08_wa7guo.png)
+
+BTW you can get the transparency by simply changing the transparency of your terminal.
