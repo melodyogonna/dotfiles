@@ -24,12 +24,8 @@ endif
 let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
 
 
-let g:NERDTreeShowHidden = 1
-let g:NERDTreeMinimalUI = 1
-let g:NERDTreeIgnore = []
-let g:NERDTreeStatusline = ''
-" Automaticaly close nvim if NERDTree is only thing left open
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+" Automaticaly close nvim if LuaTree is only thing left open
+autocmd bufenter * if (winnr("$") == 1 && exists("b:LuaTree") && b:NERDTree.isTabTree()) | q | endif
 
 let g:coc_filetype_map = {'htmldjango': 'html'}
 let test#strategy = "dispatch"
@@ -41,3 +37,4 @@ function! GitStatus()
 endfunction
 set statusline+=%{GitStatus()}
 
+let g:lua_tree_ignore = [ '.git', 'node_modules', '.cache' ]

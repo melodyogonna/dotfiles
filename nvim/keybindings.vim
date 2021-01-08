@@ -1,7 +1,10 @@
 
 " Toggle
-nnoremap <silent> <C-b> :NERDTreeToggle<CR>
+nnoremap <silent> <C-b> :LuaTreeToggle<CR>
 nnoremap <silent> <C-t> :TagbarToggle<CR>
+
+" Luatree
+nnoremap <leader>n :LuaTreeFindFile<CR>
 
 " mapping for vim-test
 nnoremap <leader>tn :TestNearest<CR>

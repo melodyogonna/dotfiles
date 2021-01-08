@@ -10,7 +10,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'airblade/vim-gitgutter'
 Plug 'Valloric/MatchTagAlways'
-Plug 'scrooloose/nerdtree'
+Plug 'kyazdani42/nvim-tree.lua'
 Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-dispatch'
 Plug 'vim-test/vim-test'
@@ -19,11 +19,13 @@ Plug 'honza/vim-snippets'
 Plug 'michaeljsmith/vim-indent-object'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-Plug 'justinmk/vim-sneak'
 Plug 'psliwka/vim-smoothie'
 Plug 'norcalli/nvim-colorizer.lua'
 Plug 'tjdevries/colorbuddy.nvim'
 Plug 'Th3Whit3Wolf/onebuddy'
+Plug 'bkegley/gloombuddy'
+Plug 'christianchiarulli/nvcode-color-schemes.vim'
+Plug 'kyazdani42/nvim-web-devicons'
 Plug 'ryanoasis/vim-devicons'
 
 call plug#end()
