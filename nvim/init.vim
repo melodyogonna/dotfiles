@@ -4,9 +4,6 @@ source $HOME/.config/nvim/settings.vim
 " Installed plugins
 source $HOME/.config/nvim/plugins.vim
 
-" Tressiter
-source $HOME/.config/nvim/treesitter.vim
-
 " Theming
 source $HOME/.config/nvim/theme.vim
 
@@ -15,6 +12,10 @@ source $HOME/.config/nvim/keybindings.vim
 
 " Settings for conquer of completion
 source $HOME/.config/nvim/coc.vim
+
+lua << EOF
+    require('lua/init')
+EOF
 
 
 if executable('rg')

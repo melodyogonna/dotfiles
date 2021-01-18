@@ -235,9 +235,6 @@ assign [class="Firefox"] 2
 assign [class="Nautilus"] 3
 assign [class="Rhythmbox"] 5
 
-# launch chrome browser on startup
-exec google-chrome --password-store=gnome
-
 # launch chrome browser when mod + b is pressed
 bindsym $mod+b exec google-chrome --password-store=gnome
 

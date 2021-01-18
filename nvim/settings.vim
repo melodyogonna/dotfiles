@@ -27,7 +27,6 @@ set splitbelow
 set splitright
 set mouse=a
 set clipboard=unnamedplus
-set autochdir
 
 if (has("termguicolors"))
   set termguicolors
