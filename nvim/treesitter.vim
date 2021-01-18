@@ -1,3 +1,4 @@
+lua << EOF
 require "nvim-web-devicons".setup({
   default = true
 })
@@ -11,3 +12,4 @@ require'nvim-treesitter.configs'.setup {
     enable = true
   }
 }
+EOF

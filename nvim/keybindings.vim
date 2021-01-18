@@ -1,10 +1,11 @@
 
 " Toggle
-nnoremap <silent> <C-b> :LuaTreeToggle<CR>
+nnoremap <silent> <C-b> :NvimTreeToggle<CR>
 nnoremap <silent> <C-t> :TagbarToggle<CR>
 
 " Luatree
-nnoremap <leader>n :LuaTreeFindFile<CR>
+nnoremap <leader>n :NvimTreeFindFile<CR>
+nnoremap <leader>r :NvimTreeRefresh<CR>
 
 " mapping for vim-test
 nnoremap <leader>tn :TestNearest<CR>
@@ -13,6 +14,7 @@ nnoremap <leader>ts :TestSuite<CR>
 nnoremap <leader>tl :TestLast<CR>
 nnoremap <leader>tv :TestVisit<CR>
 
+nnoremap <F5> :UndotreeToggle<CR>
 
 " mapping for vim-go
 " Run current file
@@ -30,6 +32,9 @@ nnoremap <leader>gt :GoTest<CR>
 let g:coc_snippet_prev = '<c-k>'
 " Use <C-j> for jump to next placeholder, it's default of coc.nvim
 let g:coc_snippet_next = '<c-j>'
+
+let g:UltiSnipsJumpForwardTrigger="<c-j>"
+let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 
 " Remap split keys
 nnoremap <C-J> <C-W><C-J>
