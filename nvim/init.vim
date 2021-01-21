@@ -10,14 +10,13 @@ source $HOME/.config/nvim/theme.vim
 source $HOME/.config/nvim/keybindings.vim
 
 " Settings for conquer of completion
-" source $HOME/.config/nvim/coc.vim
+source $HOME/.config/nvim/coc.vim
 
 " Treesitter
 source $HOME/.config/nvim/treesitter.vim
 
 " lsp
-source $HOME/.config/nvim/lsp.vim
-
+" source $HOME/.config/nvim/lsp.vim
 
 if executable('rg')
     let g:rg_derive_root='true'
@@ -25,9 +24,6 @@ endif
 
 let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
 
-
-" Automaticaly close nvim if LuaTree is only thing left open
-autocmd bufenter * if (winnr("$") == 1 && exists("b:LuaTree") && b:NvimTree.isTabTree()) | q | endif
 
 let g:coc_filetype_map = {'htmldjango': 'html'}
 let test#strategy = "dispatch"
@@ -40,3 +36,4 @@ endfunction
 set statusline+=%{GitStatus()}
 
 let g:lua_tree_ignore = [ '.git', 'node_modules', '.cache' ]
+let g:nvim_tree_quit_on_open = 1

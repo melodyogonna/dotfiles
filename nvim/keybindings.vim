@@ -33,11 +33,13 @@ let g:coc_snippet_prev = '<c-k>'
 " Use <C-j> for jump to next placeholder, it's default of coc.nvim
 let g:coc_snippet_next = '<c-j>'
 
-let g:UltiSnipsJumpForwardTrigger="<c-j>"
-let g:UltiSnipsJumpBackwardTrigger="<c-k>"
-
 " Remap split keys
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
+
+" Some fugitive keybindings
+nnoremap <leader>g :G<CR>
+nnoremap <leader>gh :diffget//2<CR>
+nnoremap <leader>gl :diffget//3<CR>

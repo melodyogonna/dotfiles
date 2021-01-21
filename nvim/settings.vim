@@ -22,11 +22,11 @@ set encoding=utf-8
 set fileformat=unix
 set autoindent
 set cursorline
-set autoread
 set splitbelow
 set splitright
 set mouse=a
 set clipboard=unnamedplus
+set completeopt=menuone,noinsert
 
 if (has("termguicolors"))
   set termguicolors

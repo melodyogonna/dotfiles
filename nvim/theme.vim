@@ -1,4 +1,4 @@
-colorscheme aurora
+colorscheme nord
 set background=dark
 let g:airline_theme='nord_minimal'
 

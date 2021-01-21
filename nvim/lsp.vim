@@ -1,11 +1,10 @@
-autocmd BufEnter * lua require'completion'.on_attach()
-"
+" autocmd BufEnter * lua require'completion'.on_attach()
+
 " Use <Tab> and <S-Tab> to navigate through popup menu
 inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
-set completeopt=menuone,noinsert
-let g:completion_matchin_strategy_list = ['exact', 'substring', 'fuzzy']
+let g:completion_matching_strategy_list = ['exact', 'substring', 'fuzzy']
 let g:completion_enable_snippet = 'UltiSnips'
 
 lua << EOF

@@ -162,7 +162,7 @@ let g:coc_global_extensions = [
 \ 'coc-tsserver',
 \ 'coc-html',
 \ 'coc-css',
-\ 'coc-python',
+\ 'coc-pyright',
 \ 'coc-vetur',
 \ 'coc-eslint',
 \ 'coc-emmet',
