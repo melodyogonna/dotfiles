@@ -24,8 +24,6 @@ Plug 'tjdevries/colorbuddy.nvim'
 Plug 'christianchiarulli/nvcode-color-schemes.vim'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'ryanoasis/vim-devicons'
-Plug 'neovim/nvim-lspconfig'
 Plug 'wakatime/vim-wakatime'
-Plug 'sheerun/vim-polyglot'
 
 call plug#end()
