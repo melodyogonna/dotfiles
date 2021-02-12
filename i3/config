@@ -217,7 +217,7 @@ exec --no-startup-id /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agen
 
 # start picom
 # exec --no-startup-id picom
-exec_always --no-startup-id pkill picom; picom --no-use-damage
+exec_always --no-startup-id pkill picom; picom --experimental-backends --no-use-damage
 
 # Turn borders off
 for_window [class="^.*"] border pixel 0

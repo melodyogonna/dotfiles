@@ -1,8 +1,10 @@
 call plug#begin('~/.nvim/plugged')
 Plug 'tpope/vim-fugitive'
 Plug 'majutsushi/tagbar'
-Plug 'ctrlpvim/ctrlp.vim'
 Plug 'mbbill/undotree'
+Plug 'nvim-telescope/telescope.nvim'
+Plug 'nvim-lua/popup.nvim'
+Plug 'nvim-lua/plenary.nvim'
 Plug 'tmhedberg/SimpylFold'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'tpope/vim-commentary'

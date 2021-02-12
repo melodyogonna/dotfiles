@@ -28,6 +28,7 @@ set splitright
 set mouse=a
 set clipboard=unnamedplus
 set completeopt=menuone,noinsert
+set wildignore=node_modules
 
 if (has("termguicolors"))
   set termguicolors
