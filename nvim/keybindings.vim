@@ -44,5 +44,7 @@ nnoremap <leader>g :G<CR>
 nnoremap <leader>gh :diffget//2<CR>
 nnoremap <leader>gl :diffget//3<CR>
 
+nnoremap <leader>x :close<CR>
+
 nnoremap <C-p> <cmd>Telescope find_files<cr>
 nnoremap <leader>b :ls<cr>
