@@ -1,7 +1,5 @@
 call plug#begin('~/.nvim/plugged')
 Plug 'tpope/vim-fugitive'
-Plug 'majutsushi/tagbar'
-Plug 'mbbill/undotree'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
@@ -19,7 +17,6 @@ Plug 'honza/vim-snippets'
 Plug 'michaeljsmith/vim-indent-object'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-Plug 'psliwka/vim-smoothie'
 Plug 'norcalli/nvim-colorizer.lua'
 Plug 'tjdevries/colorbuddy.nvim'
 Plug 'christianchiarulli/nvcode-color-schemes.vim'

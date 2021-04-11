@@ -40,6 +40,8 @@ let g:nvim_tree_auto_close = 1 "0 by default, closes the tree when it's the last
 let g:nvim_tree_quit_on_open = 1 "0 by default, closes the tree when you open a file
 let g:nvim_tree_follow = 1 
 let g:nvim_tree_hide_dotfiles = 1
+let g:nvim_tree_side = 'right' "left by default
+let g:nvim_tree_width = 40 "30 by default
 
 lua << EOF
 require('telescope').setup{
@@ -47,6 +49,7 @@ require('telescope').setup{
         file_ignore_patterns = {"node_modules", "vendor", ".git", "env"}
       }
 }
+
 EOF
 
 
