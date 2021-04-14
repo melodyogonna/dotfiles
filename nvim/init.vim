@@ -1,4 +1,3 @@
-" Basic settings
 source $HOME/.config/nvim/settings.vim
 
 " Installed plugins
@@ -10,18 +9,18 @@ source $HOME/.config/nvim/theme.vim
 source $HOME/.config/nvim/keybindings.vim
 
 " Settings for conquer of completion
-source $HOME/.config/nvim/coc.vim
+"source $HOME/.config/nvim/coc.vim
 
 " Treesitter
 source $HOME/.config/nvim/treesitter.vim
 
 " lsp
-" source $HOME/.config/nvim/lsp.vim
+ source $HOME/.config/nvim/lsp.vim
 
 if executable('rg')
     let g:rg_derive_root='true'
 endif
-
+d
 
 
 let g:coc_filetype_map = {'htmldjango': 'html'}
@@ -51,6 +50,5 @@ require('telescope').setup{
 }
 
 EOF
-
 
 let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.vue'

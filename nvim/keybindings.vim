@@ -1,7 +1,6 @@
 
 " Toggle
 nnoremap <silent> <C-b> :NvimTreeToggle<CR>
-nnoremap <silent> <C-t> :TagbarToggle<CR>
 
 " Luatree
 nnoremap <leader>n :NvimTreeFindFile<CR>
@@ -28,10 +27,6 @@ nnoremap <leader>gba :GoBuild<CR>
 " run tests
 nnoremap <leader>gt :GoTest<CR>
 
-" Use <C-k> for jump to previous placeholder, it's default of coc.nvim
-let g:coc_snippet_prev = '<c-k>'
-" Use <C-j> for jump to next placeholder, it's default of coc.nvim
-let g:coc_snippet_next = '<c-j>'
 
 " Remap split keys
 nnoremap <C-J> <C-W><C-J>
