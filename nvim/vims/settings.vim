@@ -20,6 +20,7 @@ set foldmethod=indent
 set foldlevel=99
 set textwidth=79
 set colorcolumn=80
+set cmdheight=2
 set encoding=utf-8
 set fileformat=unix
 set cursorline
@@ -28,7 +29,6 @@ set splitright
 set mouse=a
 set clipboard=unnamedplus
 set completeopt=menuone,noinsert
-set wildignore=node_modules
 
 if (has("termguicolors"))
   set termguicolors
@@ -38,4 +38,3 @@ runtime macros/matchit.vim
 
 let mapleader = " "
 
-autocmd FileType python setlocal shiftwidth=4 softtabstop=4 expandtab

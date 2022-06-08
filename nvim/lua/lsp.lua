@@ -1,21 +1,10 @@
-" autocmd BufEnter * lua require'completion'.on_attach()
-
-" Use <Tab> and <S-Tab> to navigate through popup menu
-inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-
-" Jump forward or backward through snippets
-imap <expr> <c-j>   vsnip#jumpable(1)   ? '<Plug>(vsnip-jump-next)'      : '<Tab>'
-smap <expr> <c-j>   vsnip#jumpable(1)   ? '<Plug>(vsnip-jump-next)'      : '<Tab>'
-imap <expr> <c-k> vsnip#jumpable(-1)  ? '<Plug>(vsnip-jump-prev)'      : '<S-Tab>'
-smap <expr> <c-k> vsnip#jumpable(-1)  ? '<Plug>(vsnip-jump-prev)'      : '<S-Tab>'
-
-lua << EOF
 lspconfig = require "lspconfig"
-
+util = require "lspconfig/util"
+require'config/cmp'
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
+capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 
 lspconfig.html.setup{
   capabilities = capabilities,
@@ -23,23 +12,13 @@ lspconfig.html.setup{
 lspconfig.cssls.setup{}
 lspconfig.jsonls.setup{}
 
-require"compe".setup {
-    enabled = true;
-    autocomplete = true;
-
-    source = {
-      buffer = true,
-      path = true,
-      nvim_lsp = true,
-      vsnip = true,
-     }
-   }
 
 local on_attach = function(client, bufnr)
   local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
   local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
 
   buf_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
+
 
   -- Mappings.
   local opts = { noremap=true, silent=true }
@@ -65,6 +44,10 @@ local on_attach = function(client, bufnr)
   end
   if client.resolved_capabilities.document_range_formatting then
     buf_set_keymap("v", "<space>f", "<cmd>lua vim.lsp.buf.range_formatting()<CR>", opts)
+    vim.api.nvim_command [[augroup Format]]
+    vim.api.nvim_command [[autocmd! * <buffer>]]
+    vim.api.nvim_command [[autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync(nill, 500)]]
+    vim.api.nvim_command [[augroup END]]
   end
 
   -- Set autocommands conditional on server_capabilities
@@ -88,12 +71,20 @@ local servers = { "pyright", "vuels", "tsserver" }
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup { on_attach = on_attach }
 end
-EOF
 
-inoremap <silent><expr> <C-Space> compe#complete()
-inoremap <silent><expr> <CR>      compe#confirm('<CR>')
-inoremap <silent><expr> <C-e>     compe#close('<C-e>')
-inoremap <silent><expr> <C-f>     compe#scroll({ 'delta': +4 })
-inoremap <silent><expr> <C-d>     compe#scroll({ 'delta': -4 })
+lspconfig.efm.setup {
+    init_options = {documentFormatting = true},
+    cmd = { "efm-langserver" },
+    on_attach = on_attach,
+    root_dir = util.root_pattern(".git", vim.fn.getcwd()),
+    settings = {
+        languages = {
+            python = {
+              formatCommand = "black --quiet -",
+              formatStdin = true
+            },
+        }
+    },
+    filetypes = {'python'}
+}
 
-autocmd BufWritePre * lua vim.lsp.buf.formatting_sync(nil, 500)
