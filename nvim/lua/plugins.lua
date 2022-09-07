@@ -1,7 +1,6 @@
 return require('packer').startup(function(use)
   use "wbthomason/packer.nvim"
   use 'tpope/vim-fugitive'
-  use 'tmhedberg/SimpylFold'
   use 'tpope/vim-commentary'
   use 'vim-airline/vim-airline'
   use 'vim-airline/vim-airline-themes'
@@ -10,7 +9,6 @@ return require('packer').startup(function(use)
   use 'tpope/vim-dispatch'
   use 'vim-test/vim-test'
   use 'machakann/vim-sandwich'
-  use 'honza/vim-snippets'
   use {'fatih/vim-go', run = ':GoUpdateBinaries' }
   use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate', config = require'config/treesitter'}
   use 'nvim-treesitter/nvim-treesitter-textobjects'
@@ -21,12 +19,11 @@ return require('packer').startup(function(use)
   use 'ryanoasis/vim-devicons'
   use 'alvan/vim-closetag'
   use {'L3MON4D3/LuaSnip', requires='hrsh7th/nvim-cmp'}
-  use {'hrsh7th/nvim-cmp', requires = {{'hrsh7th/cmp-nvim-lsp'}, {'hrsh7th/cmp-buffer'}, {'hrsh7th/cmp-path'}}}
+  use {'hrsh7th/nvim-cmp', requires = {{'hrsh7th/cmp-nvim-lsp'}, {'hrsh7th/cmp-buffer'}, {'hrsh7th/cmp-path'}, {'saadparwaiz1/cmp_luasnip'}}}
   use 'neovim/nvim-lspconfig'
   use 'rafamadriz/friendly-snippets'
+  use 'sbdchd/neoformat'
   use 'jiangmiao/auto-pairs'
   use 'wakatime/vim-wakatime'
-  use 'github/copilot.vim'
-  use 'mfussenegger/nvim-dap'
 end)
 

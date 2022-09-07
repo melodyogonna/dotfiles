@@ -168,5 +168,6 @@ let g:coc_global_extensions = [
 \ 'coc-emmet',
 \ 'coc-prettier',
 \ 'coc-pairs',
-\ 'coc-go'
+\ 'coc-go',
+\ 'coc-flutter'
 \ ]

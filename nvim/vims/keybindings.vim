@@ -13,8 +13,6 @@ nnoremap <leader>ts :TestSuite<CR>
 nnoremap <leader>tl :TestLast<CR>
 nnoremap <leader>tv :TestVisit<CR>
 
-nnoremap <F5> :UndotreeToggle<CR>
-
 " mapping for vim-go
 " Run current file
 nnoremap <leader>gr :GoRun %<CR>
@@ -41,5 +39,4 @@ nnoremap <leader>gl :diffget//3<CR>
 
 nnoremap <leader>x :close<CR>
 
-nnoremap <C-p> <cmd>Telescope find_files<cr>
 nnoremap <leader>b :ls<cr>

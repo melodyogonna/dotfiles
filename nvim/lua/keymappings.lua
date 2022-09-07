@@ -40,7 +40,8 @@ local default_keys = {
     { "<C-b>", ":NvimTreeToggle<CR>" },
     -- { "<leader>t", "<cmd>lua require('config.nvimtree').toggle_tree()<cr>" },
     { "<leader>ff", ":NvimTreeFindFile<CR>"},
-    -- { "<leader>ff", "<cmd>lua require('config.nvimtree').find_file()<cr>" },
+
+    { "<leader>r", ":NvimTreeRefresh<CR>"},
 
     --nvim-dap-ui
     { '<leader>d', '<cmd>lua require("dapui").toggle()<CR>' },

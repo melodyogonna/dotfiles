@@ -6,6 +6,7 @@ require 'theme'
 
 local g = vim.g
 g["test#strategy"] = "dispatch"
+g["closetag_filenames"] = '*.html,*.xhtml,*.phtml,*.vue'
 
 vim.api.nvim_create_autocmd("BufEnter", {
   nested = true,
@@ -15,3 +16,10 @@ vim.api.nvim_create_autocmd("BufEnter", {
     end
   end
 })
+
+
+vim.api.nvim_command [[augroup Format]]
+vim.api.nvim_command [[autocmd! * <buffer>]]
+vim.api.nvim_command [[autocmd BufWritePre <buffer> undojoin | Neoformat]]
+vim.api.nvim_command [[augroup END]]
+g["neoformat_try_node_exe"] = 1

@@ -4,13 +4,26 @@ require'config/cmp'
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
-capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
+-- capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 
 lspconfig.html.setup{
   capabilities = capabilities,
 }
 lspconfig.cssls.setup{}
 lspconfig.jsonls.setup{}
+lspconfig.emmet_ls.setup({
+    -- on_attach = on_attach,
+    capabilities = capabilities,
+    filetypes = { 'html', 'typescriptreact', 'javascriptreact', 'css', 'sass', 'scss', 'less' },
+    init_options = {
+      html = {
+        options = {
+          -- For possible options, see: https://github.com/emmetio/emmet/blob/master/src/config.ts#L79-L267
+          ["bem.enabled"] = true,
+        },
+      },
+    }
+})
 
 
 local on_attach = function(client, bufnr)
@@ -44,18 +57,14 @@ local on_attach = function(client, bufnr)
   end
   if client.resolved_capabilities.document_range_formatting then
     buf_set_keymap("v", "<space>f", "<cmd>lua vim.lsp.buf.range_formatting()<CR>", opts)
-    vim.api.nvim_command [[augroup Format]]
-    vim.api.nvim_command [[autocmd! * <buffer>]]
-    vim.api.nvim_command [[autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync(nill, 500)]]
-    vim.api.nvim_command [[augroup END]]
   end
 
   -- Set autocommands conditional on server_capabilities
   if client.resolved_capabilities.document_highlight then
     vim.api.nvim_exec([[
-      hi LspReferenceRead cterm=bold ctermbg=red guibg=LightYellow
-      hi LspReferenceText cterm=bold ctermbg=red guibg=LightYellow
-      hi LspReferenceWrite cterm=bold ctermbg=red guibg=LightYellow
+      hi LspReferenceRead cterm=bold ctermbg=red
+      hi LspReferenceText cterm=bold ctermbg=red
+      hi LspReferenceWrite cterm=bold ctermbg=red
       augroup lsp_document_highlight
         autocmd! * <buffer>
         autocmd CursorHold <buffer> lua vim.lsp.buf.document_highlight()
@@ -71,20 +80,4 @@ local servers = { "pyright", "vuels", "tsserver" }
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup { on_attach = on_attach }
 end
-
-lspconfig.efm.setup {
-    init_options = {documentFormatting = true},
-    cmd = { "efm-langserver" },
-    on_attach = on_attach,
-    root_dir = util.root_pattern(".git", vim.fn.getcwd()),
-    settings = {
-        languages = {
-            python = {
-              formatCommand = "black --quiet -",
-              formatStdin = true
-            },
-        }
-    },
-    filetypes = {'python'}
-}
 
