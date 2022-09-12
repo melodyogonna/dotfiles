@@ -35,16 +35,27 @@ local default_keys = {
     { "<C-p>", "<cmd>lua require('telescope.builtin').find_files()<cr>" },
     { "<leader>gg", "<cmd>lua require('telescope.builtin').live_grep()<cr>" },
     { "<leader>rr", "<cmd>lua require('telescope.builtin').oldfiles()<cr>"},
+    {"<leader>fb", "<cmd>lua require('telescope.builtin').buffers()<cr>"},
 
     -- NvimTree
     { "<C-b>", ":NvimTreeToggle<CR>" },
     -- { "<leader>t", "<cmd>lua require('config.nvimtree').toggle_tree()<cr>" },
-    { "<leader>ff", ":NvimTreeFindFile<CR>"},
+    { "<leader>ff", ":Neoformat<CR>"},
 
     { "<leader>r", ":NvimTreeRefresh<CR>"},
 
     --nvim-dap-ui
     { '<leader>d', '<cmd>lua require("dapui").toggle()<CR>' },
+
+    --nvim-dap
+    
+    { '<leader>d', '<cmd>lua require("dap").continue()<CR>' },
+    { '<leader>b', '<cmd>lua require("dap").toggle_breakpoint()<CR>' },
+    { '<leader>so', '<cmd>lua require("dap").step_over()<CR>' },
+    { '<leader>si', '<cmd>lua require("dap").step_into()<CR>' },
+    --toggle repl
+    { '<leader>rp', '<cmd>lua require("dap").repl.toggle()<CR>' },
+
 
 -- mapping for vim-test
     {'<leader>tn', ':TestNearest<CR>'},

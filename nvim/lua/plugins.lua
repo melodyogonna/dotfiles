@@ -21,9 +21,14 @@ return require('packer').startup(function(use)
   use {'L3MON4D3/LuaSnip', requires='hrsh7th/nvim-cmp'}
   use {'hrsh7th/nvim-cmp', requires = {{'hrsh7th/cmp-nvim-lsp'}, {'hrsh7th/cmp-buffer'}, {'hrsh7th/cmp-path'}, {'saadparwaiz1/cmp_luasnip'}}}
   use 'neovim/nvim-lspconfig'
-  use 'rafamadriz/friendly-snippets'
   use 'sbdchd/neoformat'
   use 'jiangmiao/auto-pairs'
   use 'wakatime/vim-wakatime'
+  use 'andymass/vim-matchup'
+  use 'mfussenegger/nvim-dap'
+  use {
+  'nvim-telescope/telescope.nvim', tag = '0.1.0',
+  requires = { {'nvim-lua/plenary.nvim'} }
+}
 end)
 

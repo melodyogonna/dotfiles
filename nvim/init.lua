@@ -3,6 +3,7 @@ require 'plugins'
 require 'lsp'
 require 'keymappings'
 require 'theme'
+require 'config/dap'
 
 local g = vim.g
 g["test#strategy"] = "dispatch"
