@@ -1,5 +1,5 @@
-lspconfig = require "lspconfig"
-util = require "lspconfig/util"
+local lspconfig = require "lspconfig"
+local util = require "lspconfig/util"
 require'config/cmp'
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
@@ -8,23 +8,10 @@ capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 
 lspconfig.html.setup{
   capabilities = capabilities,
+  filetypes = { "html", "htmldjango" }
 }
 lspconfig.cssls.setup{}
 lspconfig.jsonls.setup{}
-lspconfig.emmet_ls.setup({
-    -- on_attach = on_attach,
-    capabilities = capabilities,
-    filetypes = { 'html',  'vue', 'typescriptreact', 'javascriptreact', 'css', 'sass', 'scss', 'less' },
-    init_options = {
-      html = {
-        options = {
-          -- For possible options, see: https://github.com/emmetio/emmet/blob/master/src/config.ts#L79-L267
-          ["bem.enabled"] = true,
-        },
-      },
-    }
-})
-
 lspconfig.sumneko_lua.setup {
   settings = {
     Lua = {
@@ -39,6 +26,7 @@ lspconfig.sumneko_lua.setup {
       workspace = {
         -- Make the server aware of Neovim runtime files
         library = vim.api.nvim_get_runtime_file("", true),
+        checkThirdParty = false
       },
       -- Do not send telemetry data containing a randomized but unique identifier
       telemetry = {

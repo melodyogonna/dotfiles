@@ -4,6 +4,7 @@ require 'lsp'
 require 'keymappings'
 require 'theme'
 require 'config/dap'
+require 'config/lualine'
 
 local g = vim.g
 g["test#strategy"] = "dispatch"

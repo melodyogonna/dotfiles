@@ -2,8 +2,6 @@ return require('packer').startup(function(use)
   use "wbthomason/packer.nvim"
   use 'tpope/vim-fugitive'
   use 'tpope/vim-commentary'
-  use 'vim-airline/vim-airline'
-  use 'vim-airline/vim-airline-themes'
   use 'airblade/vim-gitgutter'
   use {'kyazdani42/nvim-tree.lua', config = require'config/nvimtree'}
   use 'tpope/vim-dispatch'
@@ -16,7 +14,7 @@ return require('packer').startup(function(use)
   use 'tjdevries/colorbuddy.nvim'
   use 'christianchiarulli/nvcode-color-schemes.vim'
   use 'kyazdani42/nvim-web-devicons'
-  use 'ryanoasis/vim-devicons'
+  use 'nvim-lualine/lualine.nvim'
   use 'alvan/vim-closetag'
   use {'L3MON4D3/LuaSnip', requires='hrsh7th/nvim-cmp'}
   use {'hrsh7th/nvim-cmp', requires = {{'hrsh7th/cmp-nvim-lsp'}, {'hrsh7th/cmp-buffer'}, {'hrsh7th/cmp-path'}, {'saadparwaiz1/cmp_luasnip'}}}
