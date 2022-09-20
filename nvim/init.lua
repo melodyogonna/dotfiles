@@ -6,6 +6,8 @@ require 'theme'
 require 'config/dap'
 require 'config/lualine'
 
+require("luasnip.loaders.from_vscode").lazy_load()
+
 local g = vim.g
 g["test#strategy"] = "dispatch"
 g["closetag_filenames"] = '*.html,*.xhtml,*.phtml,*.vue'
