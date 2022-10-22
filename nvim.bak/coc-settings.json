@@ -1,0 +1,23 @@
+{
+  "coc.preferences.formatOnSaveFiletypes": [
+    "css",
+    "scss",
+    "markdown",
+    "html",
+    "js",
+    "javascript",
+    "vue",
+    "python",
+    "json",
+    "php",
+    "yml",
+    "typescript",
+    "dart"
+  ],
+  "coc.preferences.bracketEnterImprove": true,
+  "python.jediEnabled": false,
+  "emmet.includeLanguages": {
+    "djangohtml": "html",
+    "blade": "html"
+  }
+}
